@@ -94,10 +94,7 @@
 
 				<ol class="results-list" <?php if( $page > 1 ) { echo 'start="'.($page*10).'"'; } ?>>
 					<?php
-					$results_counter = 0;
-					if( $page > 1 ) {
-						$results_counter = $page*10;
-					}
+					$results_counter = ($page-1)*20;
 					foreach ($get_movies['results'] as $a) :
 						$results_counter++;
 					?>
