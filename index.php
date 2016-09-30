@@ -187,24 +187,28 @@
 		<p>This product uses the <a href="https://www.themoviedb.org">TMDb</a> API but is not endorsed or certified by TMDb.</p>
 	</footer>
 
-	<script>
+	<?php if( !empty($movie_id) ) : ?>
 
-	// Lazy load images
-	function load_images() {
+		<script>
 
-		var img_defer = document.getElementsByTagName('img');
+		// Lazy load images
+		function load_images() {
 
-		for (var i=0; i<img_defer.length; i++) {
-			if(img_defer[i].getAttribute('data-src')) {
-				img_defer[i].setAttribute('src',img_defer[i].getAttribute('data-src'));
+			var img_defer = document.getElementsByTagName('img');
+
+			for (var i=0; i<img_defer.length; i++) {
+				if(img_defer[i].getAttribute('data-src')) {
+					img_defer[i].setAttribute('src',img_defer[i].getAttribute('data-src'));
+				}
 			}
+
 		}
 
-	}
+		window.onload = load_images;
 
-	window.onload = load_images;
+		</script>
 
-	</script>
+	<?php endif; ?>
 
 </body>
 
