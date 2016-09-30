@@ -44,8 +44,8 @@
 								<div class="styled-select">
 									<select class="filter-list__input" name="with_genres">
 										<option value="">all</option>
-										<?php foreach ($get_genres['genres'] as $a) : ?>
-											<option value="<?php echo $a['id']; ?>" <?php if( $genre == $a['id'] ) { echo 'selected'; } ?>><?php echo $a['name']; ?></option>
+										<?php foreach ($genres_foo as $key=>$val) : ?>
+											<option value="<?php echo $val; ?>" <?php if( $genre == $val ) { echo 'selected'; } ?>><?php echo $key; ?></option>
 										<?php endforeach; ?>
 									</select>
 								</div>

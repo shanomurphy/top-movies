@@ -60,15 +60,35 @@ if( !empty($movie_id) ) {
 
 $get_movies = json_decode($api_discover,true);
 
-$api_genres = file_get_contents('https://api.themoviedb.org/3/genre/movie/list?api_key='.$key.'&language=en-US');
 
-$get_genres = json_decode($api_genres,true);
+$genres_foo = array(
+	'Action' => '28',
+	'Adventure' => '12',
+	'Animation' => '16',
+	'Comedy' => '35',
+	'Crime' => '80',
+	'Documentary' => '99',
+	'Drama' => '18',
+	'Family' => '10751',
+	'Fantasy' => '14',
+	'History' => '36',
+	'Horror' => '27',
+	'Music' => '10402',
+	'Mystery' => '9648',
+	'Romance' => '10749',
+	'Science Fiction' => '878',
+	'TV Movie' => '10770',
+	'Thriller' => '53',
+	'War' => '10752',
+	'Western' => '37',
+);
+
 
 // Loop through all genres
-foreach ($get_genres['genres'] as $a) {
+foreach ($genres_foo as $key=>$val) {
 	// If we hit a match
-	if( $genre == $a['id'] ) {
-		$genre_name = $a['name'];
+	if( $genre == $val ) {
+		$genre_name = $key;
 	}
 }
 
