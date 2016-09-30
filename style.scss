@@ -254,7 +254,7 @@ a:hover {
  * =======
 */
 
-$bp1-filters: 30em;
+$bp1-filters: 58em;
 
 .filters-toggle + label {
 
@@ -289,7 +289,6 @@ $bp1-filters: 30em;
 .filters-toggle + label + .filters {
 	overflow: hidden;
 	max-height: 0;
-	padding: 0;
 	transition-duration: 0.3s;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
@@ -460,23 +459,33 @@ $bp1-filters: 30em;
 	display: flex;
 	align-items: center;
 	padding: 1rem 0;
-	margin-left: -1rem;
 	text-decoration: none;
 	color: #444;
 
 	> span {
+
 		padding-left: 1rem;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
 	}
 
 	&:hover {
 
 		color: black;
+		background: rgba($brand-color2,.25);
 
 		> .results-item__num {
 			opacity: 1;
 			color: $brand-color2;
 		}
 
+	}
+
+	@media (min-width: 40em) {
+		padding: 1rem;
 	}
 
 }
@@ -575,14 +584,54 @@ $bp1-single: 40em;
 
 .single__poster {
 
-	max-width: 25%;
+	width: 25%;
+	max-width: 185px;
 	float: left;
 	margin: 0 1rem .5rem 0;
+	background: #DDD;
+	position: relative;
+
+	&:after {
+	  padding-top: 150%;
+	  /* 16:9 ratio */
+	  display: block;
+	  content: '';
+	}
+
+	> img {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 
 	@media (min-width: $bp1-single) {
 		margin-right: 2rem;
 	}
 
+}
+
+.wrapper {
+  width: 50%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+}
+.wrapper:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+.main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /* fill parent */
+  background-color: deepskyblue;
+  /* let's see it! */
+  color: white;
 }
 
 .single__title {
