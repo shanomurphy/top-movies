@@ -729,19 +729,14 @@ $bp1-single: 40em;
 	max-width: 185px;
 	float: left;
 	margin: 0 1rem .5rem 0;
-	background: #DDD;
+	background: #DDD no-repeat;
+	background-size: cover;
 	position: relative;
 
 	&:after {
 	  padding-top: 150%;
 	  display: block;
 	  content: '';
-	}
-
-	> img {
-		position: absolute;
-		top: 0;
-		left: 0;
 	}
 
 	@media (min-width: $bp1-single) {
