@@ -5,6 +5,7 @@
 
 $brand-color: #B9090C;
 $brand-color2: #FFBF00;
+$brand-color3: #0085B2;
 
 
 
@@ -184,7 +185,7 @@ a:hover {
 .btn {
 
 	display: inline-block;
-	background: #0085B2;
+	background: $brand-color3;
 	border-radius: 3px;
 	color: white;
 	border: none;
@@ -194,7 +195,7 @@ a:hover {
 	text-align: center;
 
 	&:hover {
-		background: lighten(#0085B2,10%);
+		background: lighten($brand-color3,10%);
 		color: white;
 	}
 
@@ -498,7 +499,7 @@ $bp1-filters: 58em;
 	&:hover {
 
 		color: black;
-		background: rgba($brand-color2,.15);
+		background: rgba($brand-color3,.1);
 
 		> .results-item__num {
 			opacity: 1;
