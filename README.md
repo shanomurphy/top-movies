@@ -1,4 +1,4 @@
-# Top Movies
+# Top Rated Movies
 
 View and search the top rated movies using The Movie Database api. Filter by genre, person & year.
 
